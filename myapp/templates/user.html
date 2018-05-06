@@ -1,0 +1,17 @@
+{% extends "home-base.html" %}
+{% block title %} {{uname}} {% endblock %}
+{% block head%}
+{{ super() }}
+{% endblock %}
+{% block body %}
+    <h1>This is the User page</h1>
+    {#THis is a comment for template#}
+    {% if uname == "harry" %}
+      <h2>Welcome Professor</h2>
+    {% else %}
+    <h2>Welcome Student, {{uname}}</h2>
+    {% endif %}
+
+    <h2>The following is the UD logo:</h2>
+    <img src="{{ url_for('static', filename='img/ud.png') }}" alt="">
+{% endblock %}
